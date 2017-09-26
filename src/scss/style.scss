@@ -51,10 +51,12 @@
                     text-align: center;
                     font-size: 2rem;
                     line-height: 3rem;
-                    padding: .5rem 0;
+                    margin: .5rem 0;
                     transition: all .2s ease-in;
+                    display: flex;
                     a {
-                        color: #d5d5d5;
+                        flex-grow: 1;
+                        color: #DDD2D2;
                         text-decoration: none;
                     }
                     &:hover a {
@@ -233,6 +235,75 @@
                 width: 50%;
                 margin-top: 0;
                 max-width: 26.125rem;
+            }
+        }
+    }
+    .team {
+        @include flexStandard;
+        background-color: #000;
+        .container {
+            @include containerStyle;
+            flex-direction: column;
+            .title {
+                @include sectionTitle;
+            }
+            .team-box {
+                width: 100%;
+                animation: fade 3s forwards;
+                .team-card {
+                    width: 100%;
+                    text-align: center;
+                    margin: 1rem;
+                    &__photo {
+                        width: 100%;
+                        padding: 2rem 0 1.5rem;
+                        img {
+                            width: 10rem;
+                            height: 10rem;
+                            border-radius: 100%;
+                        }
+                    }
+                    &__name {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        line-height: 1.8rem;
+                        margin-bottom: .3rem;
+                    }
+                    &__description {
+                        font-size: 0.9rem;
+                        padding: 1rem 0.2rem;
+                        line-height: 1.4rem;
+                    }
+                    @media (min-width: 768px) {
+                        width: 45%;
+                        display: inline-block;
+                    }
+                    @media (min-width: 1200px) {
+                        width: 22%;
+                    }
+                }
+                @keyframes fade {
+                    from {
+                        opacity: 0.2;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+            }
+            .dots {
+                @include flexStandard;
+                width: 3rem;
+                justify-content: space-between;
+                padding: 5.25rem 0;
+                &__item {
+                    width: .5rem;
+                    height: .5rem;
+                    background: #7f7f7f;
+                }
+                .active {
+                    background: #fcac45;
+                }
             }
         }
     }
