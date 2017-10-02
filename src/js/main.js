@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 
 
-    function startSlide(n) {
+    function startSlide() {
 
         const slide = document.querySelectorAll('.team-box');
         const dots = document.querySelectorAll('.dots__item');
@@ -49,7 +49,7 @@ $(document).ready(function() {
         }
 
         //     //show slides
-        slide[slideIndex - 1].style.display = 'block';
+        slide[slideIndex - 1].style.display = 'flex';
         dots[slideIndex - 1].className += ' active';
         setTimeout(startSlide, 8000);
     }

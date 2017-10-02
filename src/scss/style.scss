@@ -248,12 +248,14 @@
                 @include sectionTitle;
             }
             .team-box {
-                width: 100%;
+                @include flexStandard;
+                flex-direction: column;
                 animation: fade 3s forwards;
                 .team-card {
                     width: 100%;
+                    height: 23rem;
                     text-align: center;
-                    margin: 1rem;
+                    margin: 1rem auto;
                     &__photo {
                         width: 100%;
                         padding: 2rem 0 1.5rem;
@@ -271,15 +273,15 @@
                     }
                     &__description {
                         font-size: 0.9rem;
-                        padding: 1rem 0.2rem;
+                        padding: 1rem 0.5rem;
                         line-height: 1.4rem;
                     }
                     @media (min-width: 768px) {
-                        width: 45%;
-                        display: inline-block;
+                        width: 48%;
+                        margin: .5%;
                     }
                     @media (min-width: 1200px) {
-                        width: 22%;
+                        width: 24%;
                     }
                 }
                 @keyframes fade {
@@ -289,6 +291,10 @@
                     to {
                         opacity: 1;
                     }
+                }
+                @media (min-width: 768px) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
                 }
             }
             .dots {
@@ -306,5 +312,75 @@
                 }
             }
         }
+        @media (min-width: 1200px) {
+            height: 45.9rem;
+        }
     }
+    .services {
+        @include flexStandard;
+        .container {
+            @include containerStyle;
+            flex-direction: column;
+            color: #000;
+            .title {
+                @include sectionTitle;
+                span {
+                    font-weight: 700;
+                }
+            }
+            .description {
+                margin: .625rem 0;
+                text-align: center;
+                line-height: 1.5rem;
+            }
+            .services-box {
+                @include flexStandard;
+                flex-direction: column;
+                @media (min-width: 768px) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+            }
+            .services-item {
+                @include flexStandard;
+                flex-direction: column;
+                margin: 1rem auto;
+                &__photo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: .3rem solid #fcac45;
+                    border-radius: 100%;
+                    width: 7rem;
+                    height: 7rem;
+                    margin: 1.75rem;
+                    img {
+                        padding: 1.7rem;
+                    }
+                }
+                &__title {
+                    font-size: 1.55rem;
+                    font-weight: 700;
+                }
+                &__description {
+                    font-size: 0.875rem;
+                    line-height: 1.3rem;
+                    text-align: center;
+                    margin-top: 1.375rem;
+                }
+                @media (min-width: 768px) {
+                    width: 50%;
+                }
+                @media (min-width: 1200px) {
+                    width: 23%;
+                    margin: 1%;
+                    max-width: 15.5rem;
+                }
+            }
+        }
+        @media (min-width: 1200px) {
+            height: 45.9rem;
+        }
+    }
+    .client {}
 }
