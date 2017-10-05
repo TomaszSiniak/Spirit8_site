@@ -22,7 +22,6 @@
 
 @mixin sectionTitle {
     font-size: 2.75rem;
-    margin-top: 6.25rem;
     text-align: center;
     &::after {
         content: '';
@@ -32,4 +31,16 @@
         display: block;
         margin: 1.25rem auto 2rem;
     }
+}
+
+@mixin dotsBox {
+    width: 3rem;
+    justify-content: space-between;
+    padding: 5.25rem 0 0;
+}
+
+@mixin dotItem {
+    width: .5rem;
+    height: .5rem;
+    background: #7f7f7f;
 }

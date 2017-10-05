@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'variables';
 .wrapper {
     max-width: 93.75rem;
     color: #fff;
@@ -12,15 +13,18 @@
     position: absolute;
     @include flexStandard;
     top: 0;
-    max-width: 75rem;
+    left: 0;
     .container {
-        @include flexStandard;
-        margin: 0 auto;
-        justify-content: flex-start;
+        position: relative;
+        max-width: 75rem;
+        width: 100%;
         .logo {
             font-size: 2rem;
             padding: 1rem;
             font-weight: 700;
+            @media(min-width: $large) {
+                padding: 2.5rem 1rem;
+            }
         }
         .burger {
             position: absolute;
@@ -30,6 +34,9 @@
             &:hover {
                 cursor: pointer;
                 color: #fcac45;
+            }
+            @media (min-width: $large) {
+                display: none;
             }
         }
         .navi {
@@ -53,7 +60,6 @@
                     line-height: 3rem;
                     margin: .5rem 0;
                     transition: all .2s ease-in;
-                    display: flex;
                     a {
                         flex-grow: 1;
                         color: #DDD2D2;
@@ -62,6 +68,11 @@
                     &:hover a {
                         color: #fcac45;
                         transition: all .2s ease-in;
+                    }
+                    @media (min-width: $large) {
+                        font-size: 0.9rem;
+                        width: auto;
+                        margin: 0 .9rem;
                     }
                 }
                 .close {
@@ -75,6 +86,19 @@
                         transition: all .2s ease-in;
                     }
                 }
+                @media (min-width: $large) {
+                    flex-direction: row;
+                    width: 37.5rem;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    .close {
+                        display: none;
+                    }
+                }
+            }
+            @media(min-width: $large) {
+                display: block!important; // no idea how to fix it
             }
         }
     }
@@ -84,19 +108,15 @@
     @include flexStandard;
     flex-direction: column;
     .banner {
-        @include flexStandard;
-        flex-direction: column;
+        width: 100%;
         min-height: 100vh;
         max-height: 59.375rem;
         background-color: #000;
         .container {
-            @include containerStyle;
-            flex-direction: column;
+            width: 95%;
             .titles {
-                @include flexStandard;
-                flex-direction: column;
                 text-align: center;
-                margin: 5rem auto 2rem;
+                margin: 13rem auto 2rem;
                 &__main {
                     font-size: 3rem;
                     color: #999;
@@ -114,6 +134,9 @@
                 }
             }
             .banner__btn {
+                position: absolute;
+                bottom: 10%;
+                left: 47.5%;
                 border: 1px solid #fff;
                 border-radius: 100%;
                 height: 3rem;
@@ -123,7 +146,7 @@
                 outline: none;
                 transition: all .2s ease-in;
                 overflow: hidden;
-                margin-top: 30%;
+                margin: 0 auto;
                 &:hover {
                     @include hoverBtn;
                 }
@@ -151,7 +174,7 @@
         .container {
             @include containerStyle;
             flex-direction: column;
-            @media (min-width: 768px) {
+            @media (min-width: $medium) {
                 flex-direction: row;
             }
         }
@@ -164,7 +187,7 @@
                 width: 100%;
                 padding-left: 2rem;
             }
-            @media (min-width: 768px) {
+            @media (min-width: $medium) {
                 width: 50%;
             }
         }
@@ -231,7 +254,7 @@
                     transform: scale(1.05);
                 }
             }
-            @media (min-width: 768px) {
+            @media (min-width: $medium) {
                 width: 50%;
                 margin-top: 0;
                 max-width: 26.125rem;
@@ -241,8 +264,10 @@
     .team {
         @include flexStandard;
         background-color: #000;
+        padding: 6.25rem 0;
         .container {
-            @include containerStyle;
+            width: 95%;
+            display: flex;
             flex-direction: column;
             .title {
                 @include sectionTitle;
@@ -276,11 +301,11 @@
                         padding: 1rem 0.5rem;
                         line-height: 1.4rem;
                     }
-                    @media (min-width: 768px) {
+                    @media (min-width: $medium) {
                         width: 48%;
                         margin: .5%;
                     }
-                    @media (min-width: 1200px) {
+                    @media (min-width: $large) {
                         width: 24%;
                     }
                 }
@@ -292,38 +317,40 @@
                         opacity: 1;
                     }
                 }
-                @media (min-width: 768px) {
+                @media (min-width: $medium) {
                     flex-direction: row;
                     flex-wrap: wrap;
                 }
             }
             .dots {
-                @include flexStandard;
-                width: 3rem;
-                justify-content: space-between;
-                padding: 5.25rem 0;
+                width: 100%;
+                display: flex;
+                margin: 0 auto;
+                @include dotsBox;
                 &__item {
-                    width: .5rem;
-                    height: .5rem;
-                    background: #7f7f7f;
-                }
-                .active {
-                    background: #fcac45;
+                    @include dotItem;
+                    &--active {
+                        background: #fcac45;
+                    }
                 }
             }
         }
-        @media (min-width: 1200px) {
+        @media (min-width: $large) {
             height: 45.9rem;
+            padding: 0;
         }
     }
     .services {
         @include flexStandard;
+        padding: 6.25rem 0;
         .container {
-            @include containerStyle;
+            display: flex;
+            width: 95%;
             flex-direction: column;
             color: #000;
             .title {
                 @include sectionTitle;
+                margin: 0;
                 span {
                     font-weight: 700;
                 }
@@ -334,17 +361,20 @@
                 line-height: 1.5rem;
             }
             .services-box {
-                @include flexStandard;
+                width: 100%;
+                display: flex;
                 flex-direction: column;
-                @media (min-width: 768px) {
+                justify-content: space-around;
+                @media (min-width: $medium) {
                     flex-direction: row;
                     flex-wrap: wrap;
                 }
             }
             .services-item {
-                @include flexStandard;
-                flex-direction: column;
                 margin: 1rem auto;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
                 &__photo {
                     display: flex;
                     justify-content: center;
@@ -353,7 +383,7 @@
                     border-radius: 100%;
                     width: 7rem;
                     height: 7rem;
-                    margin: 1.75rem;
+                    margin: 1.75rem auto;
                     img {
                         padding: 1.7rem;
                     }
@@ -361,6 +391,7 @@
                 &__title {
                     font-size: 1.55rem;
                     font-weight: 700;
+                    margin: 0 auto;
                 }
                 &__description {
                     font-size: 0.875rem;
@@ -368,19 +399,88 @@
                     text-align: center;
                     margin-top: 1.375rem;
                 }
-                @media (min-width: 768px) {
+                @media (min-width: $medium) {
                     width: 50%;
                 }
-                @media (min-width: 1200px) {
+                @media (min-width: $large) {
                     width: 23%;
                     margin: 1%;
                     max-width: 15.5rem;
                 }
             }
         }
-        @media (min-width: 1200px) {
+        @media (min-width: $large) {
             height: 45.9rem;
+            padding: 0;
         }
     }
-    .client {}
+    .clients {
+        @include flexStandard;
+        background: #0b0b0b;
+        padding: 6.25rem 0;
+        .container {
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            .title {
+                @include sectionTitle;
+                span {
+                    font-weight: 700;
+                }
+            }
+            .clients-container {
+                flex-direction: column;
+                margin-top: 2rem;
+                .client-box {
+                    width: 100%;
+                    display: flex;
+                    margin: 1rem auto;
+                    padding: 1rem 0;
+                    &__photo {
+                        @include flexStandard;
+                        img {
+                            padding: 1rem;
+                        }
+                    }
+                    @media (min-width: $medium) {
+                        width: 33%;
+                    }
+                    @media (min-width: $large) {
+                        width: 11rem;
+                    }
+                }
+                @media (min-width: $medium) {
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                }
+            }
+            @keyframes yes {
+                from {
+                    opacity: 0.2;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            .dots {
+                width: 100%;
+                display: flex;
+                margin: 0 auto;
+                @include dotsBox;
+                &__item {
+                    @include dotItem;
+                    &--active {
+                        background: #fcac45;
+                    }
+                }
+            }
+            @media (min-width: $medium) {
+                width: 70%;
+            }
+        }
+        @media (min-width: $large) {
+            height: 32.5rem;
+            padding: 0;
+        }
+    }
 }

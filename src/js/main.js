@@ -1,6 +1,5 @@
-$(document).ready(function() {
-
-
+document.addEventListener("DOMContentLoaded", function() {
+    'use strict'
     //show / hide menu
     $('.burger').click(function() {
         $('.navi').slideDown();
@@ -23,14 +22,15 @@ $(document).ready(function() {
     // team slider
 
     let slideIndex = 0;
-    startSlide();
+    let index = 0;
+    teamSlider();
+    clientSlider();
 
 
-
-    function startSlide() {
+    function teamSlider() {
 
         const slide = document.querySelectorAll('.team-box');
-        const dots = document.querySelectorAll('.dots__item');
+        const dots = document.querySelectorAll('.team .dots__item');
 
         //     //hide slides
         for (let i = 0; i < slide.length; i++) {
@@ -39,20 +39,43 @@ $(document).ready(function() {
 
         // remove active claas from dots
         for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(' active', '');
+            dots[i].className = dots[i].className.replace(' dots__item--active', '');
         }
-
 
         slideIndex++;
         if (slideIndex > slide.length) {
             slideIndex = 1;
         }
-
         //     //show slides
         slide[slideIndex - 1].style.display = 'flex';
-        dots[slideIndex - 1].className += ' active';
-        setTimeout(startSlide, 8000);
+        dots[slideIndex - 1].className += ' dots__item--active';
+        setTimeout(teamSlider, 8000);
     }
+
+
+
+    function clientSlider() {
+        const slide = document.querySelectorAll('.clients-container');
+        const dots = document.querySelectorAll('.clients .dots__item');
+
+        for (let i = 0; i < slide.length; i++) {
+            slide[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(' dots__item--active', '');
+        }
+
+        index++;
+        if (index > slide.length) {
+            index = 1;
+        }
+
+        slide[index - 1].style.display = "flex";
+        dots[index - 1].className += ' dots__item--active';
+        setTimeout(clientSlider, 4000);
+    }
+
+
 
 
 })
