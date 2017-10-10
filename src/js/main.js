@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let index = 0;
     teamSlider();
     clientSlider();
+    testiSlider();
 
 
     function teamSlider() {
@@ -73,6 +74,31 @@ document.addEventListener("DOMContentLoaded", function() {
         slide[index - 1].style.display = "flex";
         dots[index - 1].className += ' dots__item--active';
         setTimeout(clientSlider, 4000);
+    }
+
+
+    function testiSlider() {
+
+        const slide = document.querySelectorAll('.testimonials__box');
+        const dots = document.querySelectorAll('.testimonials .dots__item');
+
+        for (let i = 0; i < slide.length; i++) {
+            slide[i].style.display = 'none';
+        }
+
+        for (let i = 0; dots.length; i++) {
+            dots[i].className = dots[i].className.replace(' dots__item--active', '');
+        }
+
+        slideIndex++;
+        if (index > slide.length) {
+            index = 1;
+        }
+
+        // slide[slideIndex - 1].style.display = 'block';
+        // dots[slideIndex - 1].className += 'dots__item--active';
+        // setTimetout(testiSlider, 5000);
+
     }
 
 
