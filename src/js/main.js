@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // team slider
 
-    let slideIndex = 0;
-    let index = 0;
+    let teamIndex = 0;
+    let clientIndex = 0;
+    let testiIndex = 0;
+
     teamSlider();
     clientSlider();
     testiSlider();
@@ -43,13 +45,13 @@ document.addEventListener("DOMContentLoaded", function() {
             dots[i].className = dots[i].className.replace(' dots__item--active', '');
         }
 
-        slideIndex++;
-        if (slideIndex > slide.length) {
-            slideIndex = 1;
+        teamIndex++;
+        if (teamIndex > slide.length) {
+            teamIndex = 1;
         }
         //     //show slides
-        slide[slideIndex - 1].style.display = 'flex';
-        dots[slideIndex - 1].className += ' dots__item--active';
+        slide[teamIndex - 1].style.display = 'flex';
+        dots[teamIndex - 1].className += ' dots__item--active';
         setTimeout(teamSlider, 8000);
     }
 
@@ -66,13 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
             dots[i].className = dots[i].className.replace(' dots__item--active', '');
         }
 
-        index++;
-        if (index > slide.length) {
-            index = 1;
+        clientIndex++;
+        if (clientIndex > slide.length) {
+            clientIndex = 1;
         }
 
-        slide[index - 1].style.display = "flex";
-        dots[index - 1].className += ' dots__item--active';
+        slide[clientIndex - 1].style.display = "flex";
+        dots[clientIndex - 1].className += ' dots__item--active';
         setTimeout(clientSlider, 4000);
     }
 
@@ -82,26 +84,24 @@ document.addEventListener("DOMContentLoaded", function() {
         const slide = document.querySelectorAll('.testimonials__box');
         const dots = document.querySelectorAll('.testimonials .dots__item');
 
+
         for (let i = 0; i < slide.length; i++) {
             slide[i].style.display = 'none';
         }
-
-        for (let i = 0; dots.length; i++) {
+        for (let i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(' dots__item--active', '');
         }
 
-        slideIndex++;
-        if (index > slide.length) {
-            index = 1;
+
+        testiIndex++;
+        if (testiIndex > slide.length) {
+            testiIndex = 1;
         }
 
-        // slide[slideIndex - 1].style.display = 'block';
-        // dots[slideIndex - 1].className += 'dots__item--active';
-        // setTimetout(testiSlider, 5000);
+        slide[testiIndex - 1].style.display = 'block';
+        dots[testiIndex - 1].className += ' dots__item--active';
+        setTimeout(testiSlider, 5000);
 
     }
-
-
-
 
 })
