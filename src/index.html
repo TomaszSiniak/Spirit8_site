@@ -457,14 +457,22 @@
                     <div class="contact__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut culpa quia nam possimus quaerat nulla harum amet rem aliquam, expedita, molestias laboriosam saepe at consequatur dolore minus voluptas quidem vero.Quis, consequatur fugiat
                         dignissimos voluptas assumenda expedita, voluptates aut pariatur quas iusto ea modi voluptatem odit hic veniam voluptate nisi nesciunt corrupti, tempora doloremque porro maxime temporibus. Ipsa, debitis tempora!</div>
                     <div class="inputs">
-                        <label for="">
-                            <input type="text" class="inputs__item">
-                        </label>
-                        <label for="">
-                                <input type="text" class="inputs__item">
-                        </label>
+                        <div class="inputs__item">
+                            <label for="name">
+                                 <input type="text" id="name" class="name" placeholder="Name">
+                             </label>
+                            <div class="name-comment"></div>
+                        </div>
+
+                        <div class="inputs__item">
+                            <label for="email">
+                                <input type="text" id="email" class="email" placeholder="E-mail">    
+                            </label>
+                            <div class="email-comment"></div>
+                        </div>
                     </div>
-                    <textarea class="message"></textarea>
+                    <textarea class="message" id="message" placeholder="Your message..."></textarea>
+                    <div class="message-comment"></div>
                     <button class="contact__btn">SEND</button>
                 </div>
             </section>

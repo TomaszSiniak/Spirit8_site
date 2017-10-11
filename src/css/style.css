@@ -1054,7 +1054,8 @@
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
       margin-bottom: 3rem; }
-      .main-content .contact .inputs__item {
+      .main-content .contact .inputs .name,
+      .main-content .contact .inputs .email {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
@@ -1062,12 +1063,13 @@
         color: #9b9b9b;
         outline: none;
         text-indent: .3rem;
-        max-width: 22.5rem;
+        width: 22rem;
         height: 2.5rem;
         margin: 1rem 0;
         padding: 0; }
-      .main-content .contact .inputs label {
-        width: 100%; }
+        .main-content .contact .inputs .name label,
+        .main-content .contact .inputs .email label {
+          width: 100%; }
       @media (min-width: 768px) {
         .main-content .contact .inputs {
           -webkit-box-pack: justify;
@@ -1085,7 +1087,8 @@
       text-indent: .3rem;
       max-width: 47rem;
       height: 10rem;
-      padding: .3rem 0 0; }
+      padding: .3rem 0 0;
+      margin-bottom: 0.5rem; }
     .main-content .contact__btn {
       width: 10rem;
       border: none;
@@ -1096,7 +1099,8 @@
       margin: 2rem auto;
       -webkit-transition: all .1s ease-in;
       -o-transition: all .1s ease-in;
-      transition: all .1s ease-in; }
+      transition: all .1s ease-in;
+      outline: none; }
       .main-content .contact__btn:hover {
         cursor: pointer;
         -webkit-transform: scale(1.1);

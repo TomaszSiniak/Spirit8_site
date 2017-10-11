@@ -104,4 +104,84 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
+
+    // ------------ FORM VALIDATION ----------------
+
+
+    const name = document.querySelector('#name');
+    const email = document.querySelector('#email');
+    const mssg = document.querySelector('#message');
+    const btn = document.querySelector('.contact__btn');
+
+    function nameValidation() {
+        const nameInput = name.value;
+        const nameComment = document.querySelector('.name-comment');
+        const nameRegExp = /^[a-zA-Z]{3,10}$/;
+
+        if (nameRegExp.test(nameInput)) {
+            name.classList.remove('incorrect-validation');
+            name.classList.add('correct-validation');
+            nameComment.innerHTML = 'Correct name';
+            nameComment.style.color = 'green';
+        } else {
+            name.classList.remove('correct-validation');
+            name.classList.add('incorrect-validation');
+            nameComment.innerHTML = 'Name should contain at least 3 characters';
+            nameComment.style.color = 'red';
+        }
+
+    }
+
+    function emailValidation() {
+        const emailInput = email.value;
+        const emailComment = document.querySelector('.email-comment');
+        const emailRegExp = /^[0-9a-zA-Z_.-]+@[0-9a-zA-Z_.-]+\.[a-zA-Z]{2,3}$/;
+
+        if (emailRegExp.test(emailInput)) {
+            email.classList.remove('incorrect-validation');
+            email.classList.add('correct-validation');
+            emailComment.innerHTML = 'Correct email';
+            emailComment.style.color = 'green';
+        } else {
+            email.classList.remove('correct-validation');
+            email.classList.add('Incorrect-validation');
+            emailComment.innerHTML = 'Incorrect email!';
+            emailComment.style.color = 'red';
+        }
+
+    }
+
+    function mssgValidation() {
+
+        const mssgInput = mssg.value;
+        const mssgComment = document.querySelector('.message-comment');
+
+        if (mssgInput !== '') {
+            mssg.classList.remove('incorrect-validation');
+            mssg.classList.add('correct-validation');
+            mssgComment.innerHTML = 'correct validation';
+            mssgComment.style.color = 'green';
+        } else {
+            mssg.classList.remove('correct-validation');
+            mssg.classList.add('incorrect-validation');
+            mssgComment.innerHTML = 'Write your message!';
+            mssgComment.style.color = 'red';
+        }
+    }
+
+
+    name.addEventListener('blur', nameValidation);
+    email.addEventListener('blur', emailValidation);
+    mssg.addEventListener('blur', mssgValidation);
+
+    btn.addEventListener('click', function() {
+        nameValidation();
+        emailValidation();
+        mssgValidation();
+    })
+
+
+
+
+
 })
