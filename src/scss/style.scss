@@ -5,6 +5,7 @@
         color: #fff;
         overflow: hidden;
         @include flexStandard;
+        flex-direction: column;
         font-family: 'Raleway', sans-serif;
         margin: 0 auto;
         .container {
@@ -503,8 +504,8 @@
                 font-size: 0.875rem;
                 line-height: 1.3rem;
                 text-align: center;
-                margin: 1.375rem 0 4rem;
-                ;
+                margin: 1.375rem auto 4rem;
+                max-width: 58rem;
             }
             .filter {
                 display: flex;
@@ -621,6 +622,7 @@
             padding: 6.25rem 0;
             .container {
                 width: 95%;
+                max-width: 58rem;
                 display: flex;
                 flex-direction: column;
                 text-align: center;
@@ -656,6 +658,105 @@
                     &--active {
                         background: #fcac45;
                     }
+                }
+            }
+            @media (min-width: $large) {
+                height: 35rem;
+                padding: 0;
+            }
+        }
+        .contact {
+            @include flexStandard;
+            padding: 6.25rem 0 2rem;
+            color: #222222;
+            .container {
+                width: 95%;
+                max-width: 47rem;
+                text-align: center;
+            }
+            &__title {
+                @include sectionTitle;
+                span {
+                    font-weight: 800;
+                }
+            }
+            &__description {
+                color: #9b9b9b;
+                font-size: 1.1rem;
+                line-height: 1.5rem;
+                margin: 2rem auto;
+            }
+            .inputs {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-bottom: 3rem;
+                &__item {
+                    box-sizing: border-box;
+                    @include inputStyle;
+                    max-width: 22.5rem;
+                    height: 2.5rem;
+                    margin: 1rem 0;
+                    padding: 0;
+                }
+                label {
+                    width: 100%;
+                }
+                @media(min-width:$medium) {
+                    justify-content: space-between;
+                    label {
+                        width: 50%;
+                    }
+                }
+            }
+            .message {
+                box-sizing: border-box;
+                @include inputStyle;
+                max-width: 47rem;
+                height: 10rem;
+                padding: .3rem 0 0;
+            }
+            &__btn {
+                width: 10rem;
+                border: none;
+                height: 2.5rem;
+                background-color: #fcac45;
+                color: #fff;
+                font-weight: 700;
+                margin: 2rem auto;
+            }
+        }
+    }
+    
+    .footer {
+        width: 100%;
+        background: #222;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: #9b9b9b;
+        .info {
+            margin: 0 auto;
+            padding: 2rem 0 1rem;
+        }
+        .socials {
+            width: 20rem;
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem auto;
+            &__item {
+                width: 3rem;
+                height: 3rem;
+                border: 1px solid #9b9b9b;
+                border-radius: 100%;
+                font-size: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    cursor: pointer;
+                    color: #fcac45;
                 }
             }
         }

@@ -44,3 +44,11 @@
     height: .5rem;
     background: #7f7f7f;
 }
+
+@mixin inputStyle {
+    width: 100%;
+    border: 1px solid #9b9b9b;
+    color: #9b9b9b;
+    outline: none;
+    text-indent: .3rem;
+}
