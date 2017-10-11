@@ -551,9 +551,8 @@
                     .photo__item,
                     .mobile__item {
                         position: relative;
-                        @include flexStandard;
                         overflow: hidden;
-                        margin: 1rem 0;
+                        margin: 1rem auto;
                         .photo {
                             max-width: 16.4rem;
                             height: 14.8rem;
@@ -565,20 +564,24 @@
                         }
                         .mask {
                             position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 100%;
                             max-width: 16.4rem;
                             height: 14.8rem;
                             background: #222222;
                             opacity: 0;
-                            @include flexStandard;
-                            flex-direction: column;
                             transition: all .5s ease-in;
+                            transform: translate(-50%, -50%);
+                            text-align: center;
                             &__title {
                                 font-size: 1.25rem;
                                 color: #fff;
+                                margin: 2rem 0;
                             }
                             &__subtitle {
                                 color: #b2b2b2;
-                                margin: 1rem 0 2rem;
+                                margin: 1rem auto 2rem;
                             }
                             &__btn {
                                 background: none;
@@ -589,7 +592,7 @@
                                 padding: .5rem;
                                 width: 2.5rem;
                                 height: 2.5rem;
-                                transition: all .4s ease-in;
+                                transition: all .1s ease-in;
                                 &:hover {
                                     cursor: pointer;
                                     transform: scale(1.1);
@@ -725,6 +728,12 @@
                 color: #fff;
                 font-weight: 700;
                 margin: 2rem auto;
+                transition: all .1s ease-in;
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    transition: all .3s ease-in;
+                }
             }
         }
     }
@@ -736,27 +745,31 @@
         flex-direction: column;
         text-align: center;
         color: #9b9b9b;
-        .info {
+        .container {
+            width: 95%;
             margin: 0 auto;
-            padding: 2rem 0 1rem;
-        }
-        .socials {
-            width: 20rem;
-            display: flex;
-            justify-content: space-around;
-            margin: 1rem auto;
-            &__item {
-                width: 3rem;
-                height: 3rem;
-                border: 1px solid #9b9b9b;
-                border-radius: 100%;
-                font-size: 1.5rem;
+            .info {
+                margin: 0 auto;
+                padding: 2rem 0 1rem;
+            }
+            .socials {
+                width: 20rem;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                &:hover {
-                    cursor: pointer;
-                    color: #fcac45;
+                justify-content: space-around;
+                margin: 1rem auto;
+                &__item {
+                    width: 3rem;
+                    height: 3rem;
+                    border: 1px solid #9b9b9b;
+                    border-radius: 100%;
+                    font-size: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:hover {
+                        cursor: pointer;
+                        color: #fcac45;
+                    }
                 }
             }
         }
