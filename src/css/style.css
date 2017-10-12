@@ -432,18 +432,6 @@
           @media (min-width: 1200px) {
             .main-content .team .container .team-box .team-card {
               width: 24%; } }
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.2; }
-  to {
-    opacity: 1; } }
-
-@keyframes fade {
-  from {
-    opacity: 0.2; }
-  to {
-    opacity: 1; } }
         @media (min-width: 768px) {
           .main-content .team .container .team-box {
             -webkit-box-orient: horizontal;
@@ -616,7 +604,9 @@
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        margin-top: 2rem; }
+        margin-top: 2rem;
+        -webkit-animation: fade 3s forwards;
+                animation: fade 3s forwards; }
         .main-content .clients .container .clients-container .client-box {
           width: 100%;
           display: -webkit-box;
@@ -651,18 +641,6 @@
             -webkit-box-direction: normal;
                 -ms-flex-direction: row;
                     flex-direction: row; } }
-
-@-webkit-keyframes yes {
-  from {
-    opacity: 0.2; }
-  to {
-    opacity: 1; } }
-
-@keyframes yes {
-  from {
-    opacity: 0.2; }
-  to {
-    opacity: 1; } }
       .main-content .clients .container .dots {
         width: 100%;
         display: -webkit-box;
@@ -976,12 +954,14 @@
         margin: 1.25rem auto 2rem; }
       .main-content .testimonials__title span {
         font-weight: 800; }
-    .main-content .testimonials___box {
+    .main-content .testimonials__box {
       width: 100%;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
-              flex-direction: column; }
+              flex-direction: column;
+      -webkit-animation: fade 3s forwards;
+              animation: fade 3s forwards; }
     .main-content .testimonials__description {
       font-size: 1.1rem;
       line-height: 1.5rem;
@@ -1154,3 +1134,15 @@
         .footer .container .socials__item:hover {
           cursor: pointer;
           color: #fcac45; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.2; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: 0.2; }
+  to {
+    opacity: 1; } }

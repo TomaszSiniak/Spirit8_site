@@ -314,14 +314,6 @@
                         width: 24%;
                     }
                 }
-                @keyframes fade {
-                    from {
-                        opacity: 0.2;
-                    }
-                    to {
-                        opacity: 1;
-                    }
-                }
                 @media (min-width: $medium) {
                     flex-direction: row;
                     flex-wrap: wrap;
@@ -436,6 +428,7 @@
             .clients-container {
                 flex-direction: column;
                 margin-top: 2rem;
+                animation: fade 3s forwards;
                 .client-box {
                     width: 100%;
                     display: flex;
@@ -457,14 +450,6 @@
                 @media (min-width: $medium) {
                     flex-wrap: wrap;
                     flex-direction: row;
-                }
-            }
-            @keyframes yes {
-                from {
-                    opacity: 0.2;
-                }
-                to {
-                    opacity: 1;
                 }
             }
             .dots {
@@ -637,9 +622,10 @@
                 font-weight: 800;
             }
         }
-        &___box {
+        &__box {
             width: 100%;
             flex-direction: column;
+            animation: fade 3s forwards;
         }
         &__description {
             font-size: 1.1rem;
@@ -774,6 +760,15 @@
                     color: #fcac45;
                 }
             }
+        }
+    }
+    // slider animation
+    @keyframes fade {
+        from {
+            opacity: 0.2;
+        }
+        to {
+            opacity: 1;
         }
     }
 }

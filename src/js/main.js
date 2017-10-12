@@ -9,14 +9,31 @@ document.addEventListener("DOMContentLoaded", function() {
         $('.navi').slideUp();
     });
 
-    // banner-button scrolls to another sections
+    // srollTo plugin
+    $(function($) {
 
-    // $('.banner__btn').on('click', function() {
-    //     $('main').animate({
-    //         scrollTop: $('.about').offset().top
-    //     }, 1000)
-
-    // });
+        $('#homeLink').click(function() {
+            $.scrollTo($('.main-content'), 500);
+        });
+        $('#aboutLink').click(function() {
+            $.scrollTo($('.about'), 800);
+        });
+        $('#servicesLink').click(function() {
+            $.scrollTo($('.services'), 1000);
+        });
+        $('#portfolioLink').click(function() {
+            $.scrollTo($('.work'), 1200);
+        });
+        $('#testiLink').click(function() {
+            $.scrollTo($('.testimonials'), 1400);
+        });
+        $('#contactLink').click(function() {
+            $.scrollTo($('.contact'), 1600);
+        });
+        $('#banner__btn').click(function() {
+            $.scrollTo($('.about'), 500);
+        })
+    });
 
 
     // team slider
@@ -144,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
             emailComment.style.color = 'green';
         } else {
             email.classList.remove('correct-validation');
-            email.classList.add('Incorrect-validation');
+            email.classList.add('incorrect-validation');
             emailComment.innerHTML = 'Incorrect email!';
             emailComment.style.color = 'red';
         }
@@ -179,9 +196,5 @@ document.addEventListener("DOMContentLoaded", function() {
         emailValidation();
         mssgValidation();
     })
-
-
-
-
 
 })
