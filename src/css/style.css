@@ -705,9 +705,11 @@
       margin: 2rem 1rem; }
       .main-content .work .filter__title {
         font-size: 1.1rem;
-        font-weight: 600; }
+        font-weight: 600;
+        padding: 1rem 0; }
       .main-content .work .filter__menu {
-        font-size: 1.1rem; }
+        font-size: 1.1rem;
+        padding: 1rem 0; }
         .main-content .work .filter__menu .menu__item {
           line-height: 1.9rem;
           padding: 0 .5rem; }
@@ -752,7 +754,8 @@
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
                 justify-content: space-between;
-        margin: 1rem auto; }
+        margin: 1rem auto;
+        display: none; }
         .main-content .work .portfolio .web-container .web__item,
         .main-content .work .portfolio .web-container .photo__item,
         .main-content .work .portfolio .web-container .mobile__item,

@@ -121,6 +121,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
+    // --------------- TABS -----------------
+
+    $('.menu__filter .menu__item').on('click', function(e) {
+        e.preventDefault();
+        $(this).addClass(' active');
+        
+    });
+
+
 
     // ------------ FORM VALIDATION ----------------
 
