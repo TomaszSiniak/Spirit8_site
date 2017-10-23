@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.menu__filter .menu__item').on('click', function(e) {
         e.preventDefault();
         $(this).addClass(' active');
-        
+
     });
 
 

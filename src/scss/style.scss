@@ -1,7 +1,7 @@
 @import 'mixins';
 @import 'variables';
 .wrapper {
-    max-width: 93.75rem;
+    width: 100%;
     color: #fff;
     overflow: hidden;
     @include flexStandard;
@@ -118,6 +118,7 @@
         background-color: #000;
         .container {
             width: 95%;
+            max-width: 75rem;
             margin: 0 auto;
             .titles {
                 text-align: center;
